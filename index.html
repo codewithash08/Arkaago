@@ -1,0 +1,4356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arkaago | Natural Living</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #faf9f5;
+            color: #26372b;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 100%;
+            min-height: 85px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #faf9f5;
+            border-bottom: 1px solid #eae8df;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 135px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 38px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #343d32;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #9b7850;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bag-button {
+            background: transparent;
+            border: 1px solid #26372b;
+            padding: 11px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #26372b;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .bag-count {
+            background: #26372b;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 11px;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+            padding: 65px 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
+        .hero-left {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero-image-circle {
+            width: min(490px, 38vw);
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #eee9df;
+        }
+
+        .hero-image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .image-caption {
+            margin-top: 20px;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #827b6d;
+        }
+
+        .hero-right {
+            width: 50%;
+            max-width: 540px;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #987b59;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-right h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5vw, 69px);
+            line-height: 1.12;
+            font-weight: 400;
+            color: #26372b;
+        }
+
+        .hero-right h1 span {
+            color: #a58a65;
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 420px;
+            margin-top: 25px;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #77766e;
+        }
+
+        .hero-price {
+            margin: 25px 0;
+        }
+
+        .hero-price span {
+            font-size: 12px;
+            color: #8b897f;
+        }
+
+        .hero-price h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            margin-top: 5px;
+        }
+
+        .primary-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 35px;
+            padding: 16px 25px;
+            background: #26372b;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .primary-button:hover {
+            background: #536b4f;
+        }
+
+        .primary-button span {
+            font-size: 18px;
+        }
+
+
+        /* COLLECTION */
+
+        .collection {
+            padding: 90px 8%;
+            background: #f1f0e9;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 45px;
+            gap: 20px;
+        }
+
+        .section-heading h2,
+        .about h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 400;
+        }
+
+        .collection-note {
+            font-size: 13px;
+            color: #858177;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #faf9f5;
+            padding: 12px;
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #eae6dc;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .product-info h3 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .product-info p {
+            font-size: 11px;
+            color: #918d82;
+            margin-top: 6px;
+        }
+
+        .product-info strong {
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .add-button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            background: transparent;
+            border: 1px solid #26372b;
+            color: #26372b;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-button:hover {
+            background: #26372b;
+            color: white;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            padding: 110px 20px;
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+        }
+
+        .about>p:last-child {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #77766e;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #26372b;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        footer h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #d2d5cc;
+            font-size: 13px;
+        }
+
+        .copyright {
+            margin-top: 35px;
+            font-size: 11px;
+        }
+
+
+        /* BAG DRAWER */
+
+        .bag-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .bag-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .bag-drawer {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: min(420px, 100%);
+            height: 100vh;
+            background: #faf9f5;
+            z-index: 201;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.3s;
+        }
+
+        .bag-drawer.active {
+            right: 0;
+        }
+
+        .bag-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e4e1d8;
+        }
+
+        .bag-header h2 {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+        }
+
+        .close-button {
+            border: none;
+            background: transparent;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .bag-items {
+            flex: 1;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .empty-bag {
+            text-align: center;
+            margin-top: 70px;
+            color: #888;
+        }
+
+        .bag-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bag-item img {
+            width: 85px;
+            height: 85px;
+            object-fit: cover;
+            background: #eee9df;
+        }
+
+        .bag-item-details {
+            flex: 1;
+        }
+
+        .bag-item-details h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .bag-item-details p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .quantity-controls button {
+            width: 25px;
+            height: 25px;
+            background: transparent;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .remove-button {
+            border: none !important;
+            width: auto !important;
+            color: #987b59;
+            margin-left: 5px;
+        }
+
+        .bag-footer {
+            border-top: 1px solid #e4e1d8;
+            padding-top: 20px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .checkout-button,
+        .continue-button {
+            width: 100%;
+            padding: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .checkout-button {
+            background: #26372b;
+            color: white;
+            border: none;
+        }
+
+        .continue-button {
+            background: transparent;
+            border: 1px solid #26372b;
+            color: #26372b;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .hero {
+                padding: 50px 5%;
+                gap: 35px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                min-height: 70px;
+                padding: 0 5%;
+            }
+
+            .logo img {
+                width: 110px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 25px;
+                background: #faf9f5;
+                flex-direction: column;
+                border-bottom: 1px solid #eae8df;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 45px 7%;
+                gap: 40px;
+            }
+
+            .hero-left,
+            .hero-right {
+                width: 100%;
+            }
+
+            .hero-image-circle {
+                width: min(340px, 82vw);
+            }
+
+            .hero-right {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section-heading {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .collection {
+                padding: 65px 5%;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .product-info {
+                flex-direction: column;
+            }
+
+            .product-info strong {
+                margin-top: 5px;
+            }
+
+            .about {
+                padding: 75px 25px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        /* =================================
+   ARKAAGO PREMIUM GLOSSY EXPERIENCE
+================================= */
+
+        :root {
+            --forest: #24382b;
+            --cream: #faf8f2;
+            --gold: #b69a70;
+            --glass: rgba(255, 255, 255, 0.55);
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            background:
+                radial-gradient(circle at 10% 15%, rgba(211, 196, 166, 0.16), transparent 30%),
+                radial-gradient(circle at 90% 45%, rgba(184, 197, 174, 0.14), transparent 30%),
+                var(--cream);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        /* GLOSSY NAVBAR */
+
+        .navbar {
+            background: rgba(250, 249, 245, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 30px rgba(35, 48, 37, 0.04);
+            transition: 0.35s ease;
+        }
+
+        .logo img {
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.06);
+        }
+
+        /* NAV LINK ANIMATION */
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            left: 0;
+            bottom: -7px;
+            background: var(--gold);
+            transition: width 0.35s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO BACKGROUND */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: rgba(191, 174, 139, 0.12);
+            filter: blur(80px);
+            top: 5%;
+            left: -150px;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(147, 169, 143, 0.13);
+            filter: blur(90px);
+            bottom: -100px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .hero-left,
+        .hero-right {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* PREMIUM CIRCULAR IMAGE */
+
+        .hero-image-circle {
+            position: relative;
+            border: 9px solid rgba(255, 255, 255, 0.7);
+            outline: 1px solid rgba(182, 154, 112, 0.3);
+            box-shadow:
+                0 25px 65px rgba(40, 48, 34, 0.13),
+                inset 0 0 25px rgba(255, 255, 255, 0.4);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            animation: floatPot 5s ease-in-out infinite;
+        }
+
+        .hero-image-circle::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.32),
+                    transparent 40%,
+                    transparent 75%,
+                    rgba(255, 255, 255, 0.12));
+            pointer-events: none;
+        }
+
+        .hero-image-circle:hover {
+            transform: scale(1.035) rotate(2deg);
+            box-shadow: 0 35px 80px rgba(40, 48, 34, 0.2);
+        }
+
+        @keyframes floatPot {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* HERO TEXT */
+
+        .hero-right h1 {
+            letter-spacing: -1.5px;
+            animation: slideUp 0.9s ease both;
+        }
+
+        .hero-description {
+            animation: slideUp 1.1s ease both;
+        }
+
+        .hero-price {
+            animation: slideUp 1.25s ease both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* GLOSSY BUTTON */
+
+        .primary-button,
+        .checkout-button {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            box-shadow: 0 8px 22px rgba(36, 56, 43, 0.17);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .primary-button::before,
+        .checkout-button::before,
+        .add-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -130%;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(110deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.35),
+                    transparent);
+            transform: skewX(-20deg);
+            transition: left 0.65s ease;
+        }
+
+        .primary-button:hover::before,
+        .checkout-button:hover::before,
+        .add-button:hover::before {
+            left: 150%;
+        }
+
+        .primary-button:hover,
+        .checkout-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(36, 56, 43, 0.22);
+        }
+
+        /* PRODUCT CARDS */
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(38, 55, 43, 0.04);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 45px rgba(38, 55, 43, 0.13);
+        }
+
+        .product-image {
+            position: relative;
+            border-radius: 3px;
+        }
+
+        .product-image img {
+            transition: transform 0.7s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.09);
+        }
+
+        .add-button {
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease;
+            font-family: "Manrope", sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .add-button:hover {
+            background: linear-gradient(135deg, #26372b, #526c50);
+            border-color: #526c50;
+            transform: translateY(-2px);
+        }
+
+        /* SECTION HEADING */
+
+        .section-heading h2,
+        .about h2 {
+            letter-spacing: -0.8px;
+        }
+
+        /* BAG BUTTON */
+
+        .bag-button {
+            transition: 0.3s ease;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .bag-button:hover {
+            background: var(--forest);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .bag-button:hover .bag-count {
+            background: white;
+            color: var(--forest);
+        }
+
+        /* GLASS SHOPPING DRAWER */
+
+        .bag-drawer {
+            background: rgba(250, 249, 245, 0.96);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: -20px 0 70px rgba(0, 0, 0, 0.12);
+        }
+
+        /* FOOTER */
+
+        footer {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 80% 10%, rgba(177, 155, 115, 0.2), transparent 35%),
+                linear-gradient(135deg, #26372b, #17251c);
+        }
+
+        footer h2 {
+            font-size: 48px;
+        }
+
+        /* REVEAL ANIMATION */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+            .navbar {
+                background: rgba(250, 249, 245, 0.94);
+            }
+
+            .hero-image-circle {
+                animation-duration: 6s;
+            }
+
+            .product-card:hover {
+                transform: translateY(-4px);
+            }
+
+            .nav-links {
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+
+        /* =================================
+   ARKAAGO LIGHT AND DARK THEMES
+================================= */
+
+        html {
+            transition: background 0.4s ease;
+        }
+
+        body,
+        .navbar,
+        .hero,
+        .collection,
+        .product-card,
+        .about,
+        .bag-drawer,
+        .bag-button,
+        .product-info,
+        .bag-header {
+            transition:
+                background 0.4s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        /* THEME TOGGLE BUTTON */
+
+        .theme-toggle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(140, 140, 120, 0.35);
+            background: rgba(255, 255, 255, 0.55);
+            color: #26372b;
+            font-size: 22px;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: all 0.35s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(25deg) scale(1.08);
+            background: #26372b;
+            color: white;
+        }
+
+        /* DARK MODE */
+
+        html[data-theme="dark"] body {
+            background: #111812;
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .navbar {
+            background: rgba(19, 29, 22, 0.88);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        html[data-theme="dark"] .nav-links a {
+            color: #e6e4da;
+        }
+
+        html[data-theme="dark"] .nav-links a:hover {
+            color: #c6a77a;
+        }
+
+        html[data-theme="dark"] .theme-toggle {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.16);
+            color: #f4d28b;
+        }
+
+        html[data-theme="dark"] .bag-button {
+            color: #f0eee6;
+            border-color: #788c77;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        html[data-theme="dark"] .bag-count {
+            background: #c2a477;
+            color: #17251c;
+        }
+
+        html[data-theme="dark"] .hero {
+            background:
+                radial-gradient(circle at 15% 30%, rgba(135, 160, 123, 0.12), transparent 35%),
+                #111812;
+        }
+
+        html[data-theme="dark"] .hero-right h1 {
+            color: #f1eee4;
+        }
+
+        html[data-theme="dark"] .hero-right h1 span {
+            color: #c5a77a;
+        }
+
+        html[data-theme="dark"] .hero-description,
+        html[data-theme="dark"] .collection-note {
+            color: #b2b7aa;
+        }
+
+        html[data-theme="dark"] .eyebrow {
+            color: #c5a77a;
+        }
+
+        html[data-theme="dark"] .hero-price h2 {
+            color: #f1eee4;
+        }
+
+        html[data-theme="dark"] .hero-price span {
+            color: #b2b7aa;
+        }
+
+        html[data-theme="dark"] .hero-image-circle {
+            background: #28352a;
+            border-color: rgba(255, 255, 255, 0.1);
+            outline-color: rgba(198, 167, 122, 0.35);
+        }
+
+        html[data-theme="dark"] .image-caption {
+            color: #b9b5a7;
+        }
+
+        html[data-theme="dark"] .collection {
+            background: #19231b;
+        }
+
+        html[data-theme="dark"] .section-heading h2,
+        html[data-theme="dark"] .about h2 {
+            color: #f1eee4;
+        }
+
+        html[data-theme="dark"] .product-card {
+            background: #222e24;
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        html[data-theme="dark"] .product-image {
+            background: #303a30;
+        }
+
+        html[data-theme="dark"] .product-info h3 {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .product-info p {
+            color: #aeb5a8;
+        }
+
+        html[data-theme="dark"] .product-info strong {
+            color: #d7c39f;
+        }
+
+        html[data-theme="dark"] .add-button {
+            border-color: #82927c;
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .add-button:hover {
+            background: #82927c;
+            color: #111812;
+        }
+
+        html[data-theme="dark"] .about {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .about>p:last-child {
+            color: #b2b7aa;
+        }
+
+        html[data-theme="dark"] footer {
+            background: #0b120d;
+        }
+
+        html[data-theme="dark"] .bag-drawer {
+            background: rgba(24, 34, 26, 0.98);
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .bag-header {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        html[data-theme="dark"] .bag-header h2,
+        html[data-theme="dark"] .bag-item-details h3,
+        html[data-theme="dark"] .total-row strong {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .bag-item-details p,
+        html[data-theme="dark"] .empty-bag {
+            color: #b2b7aa;
+        }
+
+        html[data-theme="dark"] .quantity-controls button {
+            color: white;
+            border-color: #718071;
+        }
+
+        html[data-theme="dark"] .bag-footer {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        html[data-theme="dark"] .continue-button {
+            border-color: #82927c;
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .nav-links.open {
+            background: #19231b;
+        }
+
+        @media (max-width: 650px) {
+            html[data-theme="dark"] .navbar {
+                background: rgba(19, 29, 22, 0.96);
+            }
+        }
+
+
+
+
+
+        /* =========================================
+   ARKAAGO FULL-SCREEN CHECKOUT
+========================================= */
+
+        .arka-checkout {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background: #fffaf1;
+            color: #321b14;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .arka-checkout.is-open {
+            display: block;
+        }
+
+        body.checkout-open {
+            overflow: hidden;
+        }
+
+        /* CHECKOUT HEADER */
+
+        .checkout-header {
+            height: 105px;
+            padding: 0 3%;
+            border-bottom: 1px solid #e9dfce;
+
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .checkout-back {
+            background: transparent;
+            border: none;
+            color: #321b14;
+            font-family: inherit;
+            font-size: 12px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .checkout-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkout-logo img {
+            width: 130px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .checkout-header-label {
+            text-align: right;
+            color: #867660;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        /* CHECKOUT MAIN LAYOUT */
+
+        .checkout-layout {
+            width: 100%;
+            max-width: 1020px;
+            margin: 70px auto;
+            padding: 0 20px;
+
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 44px;
+            align-items: start;
+            box-sizing: border-box;
+        }
+
+        .checkout-eyebrow {
+            color: #927e62;
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin: 0 0 12px;
+        }
+
+        /* LEFT: ORDER SUMMARY */
+
+        .checkout-order h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 58px;
+            line-height: 1;
+            font-weight: 600;
+            color: #321b14;
+            margin: 0 0 32px;
+        }
+
+        .checkout-items {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .checkout-product {
+            display: grid;
+            grid-template-columns: 60px minmax(0, 1fr) auto;
+            gap: 12px;
+            align-items: center;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #e9dfce;
+        }
+
+        .checkout-product-image,
+        .checkout-product-placeholder {
+            width: 58px;
+            height: 70px;
+            border-radius: 12px;
+            background: #f1eadc;
+        }
+
+        .checkout-product-image {
+            object-fit: contain;
+        }
+
+        .checkout-product-placeholder {
+            display: grid;
+            place-items: center;
+            color: #66513c;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+        }
+
+        .checkout-product-info {
+            min-width: 0;
+        }
+
+        .checkout-product-info h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+            margin: 0 0 4px;
+            color: #321b14;
+        }
+
+        .checkout-product-info p {
+            color: #8b7b69;
+            font-size: 11px;
+            margin: 0 0 7px;
+        }
+
+        .checkout-product-quantity {
+            color: #655646;
+            font-size: 11px;
+        }
+
+        .checkout-product-price {
+            font-size: 14px;
+            font-weight: 700;
+            color: #321b14;
+            white-space: nowrap;
+        }
+
+        .checkout-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #321b14;
+        }
+
+        .checkout-total strong {
+            font-size: 17px;
+        }
+
+        /* RIGHT: DELIVERY FORM */
+
+        .checkout-form {
+            background: #eae3d3;
+            padding: 34px 32px;
+            border-radius: 16px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-sizing: border-box;
+        }
+
+        .checkout-form .checkout-eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .checkout-form input,
+        .checkout-form textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: #fff;
+            color: #321b14;
+            padding: 0 15px;
+            border-radius: 15px;
+            font-family: "Manrope", sans-serif;
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+
+        .checkout-form input {
+            height: 44px;
+        }
+
+        .checkout-form textarea {
+            height: 85px;
+            padding-top: 14px;
+            resize: vertical;
+        }
+
+        .checkout-form input::placeholder,
+        .checkout-form textarea::placeholder {
+            color: #ad9c8e;
+        }
+
+        .checkout-form input:focus,
+        .checkout-form textarea:focus {
+            box-shadow: 0 0 0 2px #a2a98b;
+        }
+
+        .checkout-submit {
+            min-height: 51px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 50px;
+            background: #20271f;
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .checkout-submit:hover {
+            background: #344532;
+            transform: translateY(-2px);
+        }
+
+        .checkout-submit:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .checkout-hint {
+            text-align: center;
+            margin: 0;
+            color: #917d63;
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+
+        /* HIDE OLD DRAWER VISUALLY
+   Its HTML IDs are kept for compatibility
+   with your existing cart functions.
+*/
+
+        .bag-overlay,
+        .bag-drawer {
+            display: none !important;
+        }
+
+        /* MOBILE CHECKOUT */
+
+        @media (max-width: 768px) {
+
+            .checkout-header {
+                height: 78px;
+                padding: 0 16px;
+            }
+
+            .checkout-logo img {
+                width: 100px;
+                height: 55px;
+            }
+
+            .checkout-back {
+                font-size: 9px;
+            }
+
+            .checkout-header-label {
+                font-size: 8px;
+            }
+
+            .checkout-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                margin: 35px auto;
+                padding: 0 18px 40px;
+            }
+
+            .checkout-order h1 {
+                font-size: 46px;
+                margin-bottom: 25px;
+            }
+
+            .checkout-form {
+                padding: 25px 20px;
+            }
+
+            .checkout-product-info h3 {
+                font-size: 18px;
+            }
+        }
+
+
+
+        .checkout-product-controls {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 8px;
+        }
+
+        .checkout-qty-button {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid #e3d2ba;
+            background: transparent;
+            color: #321b14;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .checkout-qty-button:hover {
+            background: #e3d8c4;
+        }
+
+        .checkout-qty-number {
+            min-width: 12px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .checkout-remove {
+            border: none;
+            background: transparent;
+            color: #978b79;
+            cursor: pointer;
+            margin-left: 4px;
+        }
+
+        .checkout-remove:hover {
+            color: #b44335;
+        }
+
+
+
+
+
+        html[data-theme="dark"] .arka-checkout {
+            background: #101a14;
+            color: #f0eee6;
+        }
+
+        /* Header */
+        html[data-theme="dark"] .checkout-header {
+            background: #101a14;
+            border-bottom-color: #344438;
+        }
+
+        html[data-theme="dark"] .checkout-back,
+        html[data-theme="dark"] .checkout-order h1 {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .checkout-header-label {
+            color: #a8b49f;
+        }
+
+        /* Section labels */
+        html[data-theme="dark"] .checkout-eyebrow {
+            color: #b7c69f;
+        }
+
+        /* Product details */
+        html[data-theme="dark"] .checkout-product {
+            border-bottom-color: #344438;
+        }
+
+        html[data-theme="dark"] .checkout-product-info h3,
+        html[data-theme="dark"] .checkout-product-price,
+        html[data-theme="dark"] .checkout-total {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .checkout-product-info p,
+        html[data-theme="dark"] .checkout-product-quantity {
+            color: #b0bba9;
+        }
+
+        html[data-theme="dark"] .checkout-product-image,
+        html[data-theme="dark"] .checkout-product-placeholder {
+            background: #26372b;
+        }
+
+        html[data-theme="dark"] .checkout-product-placeholder {
+            color: #f0eee6;
+        }
+
+        /* Quantity buttons */
+        html[data-theme="dark"] .checkout-qty-button {
+            border-color: #60735f;
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .checkout-qty-button:hover {
+            background: #344b38;
+        }
+
+        html[data-theme="dark"] .checkout-remove {
+            color: #b6a99a;
+        }
+
+        html[data-theme="dark"] .checkout-remove:hover {
+            color: #ff8c83;
+        }
+
+        /* Delivery form */
+        html[data-theme="dark"] .checkout-form {
+            background: #1c2a20;
+            border: 1px solid #344438;
+        }
+
+        html[data-theme="dark"] .checkout-form input,
+        html[data-theme="dark"] .checkout-form textarea {
+            background: #101a14;
+            color: #f0eee6;
+            border: 1px solid #344438;
+        }
+
+        html[data-theme="dark"] .checkout-form input::placeholder,
+        html[data-theme="dark"] .checkout-form textarea::placeholder {
+            color: #9ba997;
+        }
+
+        html[data-theme="dark"] .checkout-form input:focus,
+        html[data-theme="dark"] .checkout-form textarea:focus {
+            box-shadow: 0 0 0 2px #9aaf85;
+        }
+
+        /* Checkout button */
+        html[data-theme="dark"] .checkout-submit {
+            background: #b5c69b;
+            color: #152018;
+        }
+
+        html[data-theme="dark"] .checkout-submit:hover {
+            background: #c9d8b1;
+        }
+
+        html[data-theme="dark"] .checkout-submit:disabled {
+            opacity: 0.5;
+        }
+
+        html[data-theme="dark"] .checkout-hint {
+            color: #a8b49f;
+        }
+
+
+
+
+        .arka-checkout {
+            position: fixed;
+            isolation: isolate;
+            background:
+                radial-gradient(ellipse at 10% 15%,
+                    rgba(194, 168, 119, 0.18),
+                    transparent 38%),
+                radial-gradient(ellipse at 90% 85%,
+                    rgba(137, 158, 115, 0.15),
+                    transparent 38%),
+                #fffaf1;
+
+            transition: background 0.4s ease;
+        }
+
+
+        .arka-checkout::before,
+        .arka-checkout::after {
+            content: "";
+            position: fixed;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: -1;
+            animation: checkoutGlow 9s ease-in-out infinite alternate;
+        }
+
+        .arka-checkout::before {
+            background: #c3a77c;
+            top: 10%;
+            left: -150px;
+        }
+
+        .arka-checkout::after {
+            background: #8fa77e;
+            bottom: -130px;
+            right: -100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes checkoutGlow {
+            from {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            to {
+                transform: translate3d(25px, -20px, 0) scale(1.2);
+            }
+        }
+
+
+
+
+        .arka-checkout .checkout-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            background: rgba(255, 250, 241, 0.67);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            border-bottom: 1px solid rgba(155, 132, 96, 0.15);
+
+            transition:
+                background 0.4s ease,
+                border-color 0.4s ease;
+        }
+
+        .checkout-logo img {
+            transition: transform 0.4s ease;
+        }
+
+        .checkout-logo:hover img {
+            transform: scale(1.06);
+        }
+
+        .checkout-back {
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .checkout-back:hover {
+            color: #789064;
+            transform: translateX(-4px);
+        }
+
+
+
+
+        .checkout-product {
+            position: relative;
+
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(155, 132, 96, 0.16);
+
+            border-radius: 15px;
+
+            background: rgba(255, 255, 255, 0.32);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 5px 18px rgba(78, 57, 31, 0.035),
+                inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .checkout-product:hover {
+            transform: translateY(-4px);
+
+            background: rgba(255, 255, 255, 0.65);
+
+            box-shadow:
+                0 14px 30px rgba(78, 57, 31, 0.09),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .checkout-product-image {
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .checkout-product:hover .checkout-product-image {
+            transform: scale(1.06) rotate(-2deg);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.08);
+        }
+
+
+
+        .checkout-form {
+            position: relative;
+
+            background: rgba(255, 255, 255, 0.42);
+
+            border: 1px solid rgba(255, 255, 255, 0.78);
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            box-shadow:
+                0 20px 60px rgba(78, 57, 31, 0.09),
+                0 5px 15px rgba(78, 57, 31, 0.035),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+            transition:
+                background 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+        }
+
+        .checkout-form:hover {
+            box-shadow:
+                0 25px 70px rgba(78, 57, 31, 0.13),
+                inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        }
+
+
+
+
+        .checkout-form input,
+        .checkout-form textarea {
+            background: rgba(255, 255, 255, 0.72);
+
+            border: 1px solid rgba(167, 146, 113, 0.13);
+
+            box-shadow:
+                inset 0 2px 5px rgba(0, 0, 0, 0.015);
+
+            transition:
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .checkout-form input:hover,
+        .checkout-form textarea:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(131, 151, 107, 0.35);
+        }
+
+        .checkout-form input:focus,
+        .checkout-form textarea:focus {
+            background: #fff;
+
+            border-color: #94a77c;
+
+            box-shadow:
+                0 0 0 4px rgba(148, 167, 124, 0.14),
+                0 5px 15px rgba(80, 100, 60, 0.06);
+
+            transform: translateY(-1px);
+        }
+
+
+
+
+        .checkout-submit {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+
+            background: linear-gradient(120deg,
+                    #20271f,
+                    #354735,
+                    #20271f);
+
+            background-size: 200% 100%;
+
+            box-shadow:
+                0 8px 20px rgba(32, 39, 31, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                background-position 0.5s ease;
+        }
+
+        .checkout-submit::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(110deg,
+                    transparent 25%,
+                    rgba(255, 255, 255, 0.22) 48%,
+                    transparent 70%);
+
+            transform: translateX(-120%);
+            transition: transform 0.75s ease;
+            pointer-events: none;
+        }
+
+        .checkout-submit:hover::after {
+            transform: translateX(120%);
+        }
+
+        .checkout-submit:hover {
+            transform: translateY(-3px);
+
+            background-position: 100% 50%;
+
+            box-shadow:
+                0 14px 28px rgba(32, 39, 31, 0.23),
+                0 0 18px rgba(125, 155, 103, 0.12);
+        }
+
+        .checkout-submit:active {
+            transform: scale(0.98);
+        }
+
+
+
+
+        .checkout-qty-button {
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .checkout-qty-button:hover {
+            transform: scale(1.12);
+        }
+
+        .checkout-qty-button:active {
+            transform: scale(0.9);
+        }
+
+        .checkout-remove {
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .checkout-remove:hover {
+            transform: scale(1.13);
+        }
+
+
+
+
+        @keyframes checkoutFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes checkoutSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes checkoutSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .arka-checkout.is-open .checkout-header {
+            animation: checkoutFadeIn 0.55s ease both;
+        }
+
+        .arka-checkout.is-open .checkout-order {
+            animation: checkoutSlideLeft 0.7s cubic-bezier(.2, .7, .3, 1) both;
+        }
+
+        .arka-checkout.is-open .checkout-form {
+            animation: checkoutSlideRight 0.7s cubic-bezier(.2, .7, .3, 1) both;
+        }
+
+
+
+
+        .arka-checkout.is-open .checkout-product:nth-child(1) {
+            animation: checkoutFadeIn 0.55s ease 0.12s both;
+        }
+
+        .arka-checkout.is-open .checkout-product:nth-child(2) {
+            animation: checkoutFadeIn 0.55s ease 0.22s both;
+        }
+
+        .arka-checkout.is-open .checkout-product:nth-child(3) {
+            animation: checkoutFadeIn 0.55s ease 0.32s both;
+        }
+
+        .arka-checkout.is-open .checkout-product:nth-child(4) {
+            animation: checkoutFadeIn 0.55s ease 0.42s both;
+        }
+
+
+
+
+        html[data-theme="dark"] .arka-checkout {
+            background:
+                radial-gradient(ellipse at 10% 15%,
+                    rgba(105, 137, 91, 0.18),
+                    transparent 38%),
+                radial-gradient(ellipse at 90% 85%,
+                    rgba(91, 119, 91, 0.16),
+                    transparent 38%),
+                #101a14;
+        }
+
+        html[data-theme="dark"] .arka-checkout::before {
+            background: #78945e;
+        }
+
+        html[data-theme="dark"] .arka-checkout::after {
+            background: #516e5d;
+        }
+
+
+
+
+        html[data-theme="dark"] .arka-checkout .checkout-header {
+            background: rgba(16, 26, 20, 0.68);
+
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+
+
+
+
+        html[data-theme="dark"] .checkout-product {
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid rgba(255, 255, 255, 0.07);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.035);
+        }
+
+        html[data-theme="dark"] .checkout-product:hover {
+            background: rgba(255, 255, 255, 0.075);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        }
+
+
+
+
+        html[data-theme="dark"] .checkout-form {
+            background: rgba(28, 42, 32, 0.66);
+
+            border: 1px solid rgba(255, 255, 255, 0.09);
+
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        }
+
+        html[data-theme="dark"] .checkout-form:hover {
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.32),
+                inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        }
+
+
+
+
+        html[data-theme="dark"] .checkout-form input,
+        html[data-theme="dark"] .checkout-form textarea {
+            background: rgba(8, 18, 12, 0.62);
+
+            border: 1px solid rgba(255, 255, 255, 0.09);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        html[data-theme="dark"] .checkout-form input:hover,
+        html[data-theme="dark"] .checkout-form textarea:hover {
+            background: rgba(15, 29, 18, 0.85);
+
+            border-color: rgba(163, 191, 137, 0.3);
+        }
+
+        html[data-theme="dark"] .checkout-form input:focus,
+        html[data-theme="dark"] .checkout-form textarea:focus {
+            background: rgba(15, 29, 18, 0.95);
+
+            border-color: #a5bc8d;
+
+            box-shadow:
+                0 0 0 4px rgba(165, 188, 141, 0.12),
+                0 5px 18px rgba(0, 0, 0, 0.15);
+        }
+
+
+
+
+        html[data-theme="dark"] .checkout-submit {
+            background: linear-gradient(120deg,
+                    #a8bd8b,
+                    #d0ddb6,
+                    #a8bd8b);
+
+            background-size: 200% 100%;
+
+            color: #172219;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        }
+
+        html[data-theme="dark"] .checkout-submit:hover {
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(165, 188, 141, 0.17);
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .checkout-form {
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+            }
+
+            .checkout-product:hover {
+                transform: translateY(-2px);
+            }
+
+            .arka-checkout::before,
+            .arka-checkout::after {
+                width: 200px;
+                height: 200px;
+                filter: blur(75px);
+            }
+
+        }
+
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .arka-checkout *,
+            .arka-checkout::before,
+            .arka-checkout::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+
+        }
+
+
+        /* =========================================
+   ARKAAGO - OUR PROMISE SECTION
+========================================= */
+
+        .promise-section {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 7%;
+
+            background: #f2e4ce;
+            color: #321b14;
+
+            transition:
+                background .45s ease,
+                color .45s ease;
+        }
+
+        .promise-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 75px;
+        }
+
+        /* LEFT IMAGE */
+
+        .promise-visual {
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+            justify-self: center;
+        }
+
+        .promise-image-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+
+            background: #e7d4b6;
+
+            box-shadow:
+                0 25px 60px rgba(70, 43, 18, .14),
+                0 5px 15px rgba(70, 43, 18, .07);
+        }
+
+        .promise-image-frame img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+
+            transition:
+                transform .8s cubic-bezier(.2, .7, .3, 1),
+                filter .5s ease;
+        }
+
+        .promise-visual:hover .promise-image-frame img {
+            transform: scale(1.045);
+        }
+
+        /* GOLD FLOATING BADGE */
+
+        .promise-badge {
+            position: absolute;
+            right: -28px;
+            bottom: -22px;
+
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8b335;
+            color: #392313;
+
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+
+            box-shadow: 0 12px 30px rgba(100, 68, 19, .18);
+
+            animation: promiseBadgeFloat 4s ease-in-out infinite;
+
+            transition:
+                background .4s ease,
+                color .4s ease;
+        }
+
+        .badge-star {
+            font-size: 16px;
+            margin-top: 3px;
+        }
+
+        @keyframes promiseBadgeFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+
+        /* RIGHT CONTENT */
+
+        .promise-content {
+            max-width: 510px;
+        }
+
+        .promise-content .eyebrow {
+            margin-bottom: 16px;
+            color: #92744e;
+        }
+
+        .promise-content h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(46px, 5.5vw, 72px);
+            font-weight: 600;
+            line-height: .98;
+
+            margin: 0 0 27px;
+
+            letter-spacing: -1.5px;
+            color: #321b14;
+        }
+
+        .promise-content h2 em {
+            display: block;
+            font-weight: 500;
+            color: #72845d;
+        }
+
+        .promise-description {
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+            line-height: 2;
+            color: #806d58;
+
+            max-width: 480px;
+            margin-bottom: 27px;
+        }
+
+        /* DISCOVER LINK */
+
+        .promise-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+
+            text-decoration: none;
+            color: #321b14;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            padding-bottom: 8px;
+            border-bottom: 1px solid #90734d;
+
+            transition:
+                gap .3s ease,
+                color .3s ease,
+                border-color .3s ease;
+        }
+
+        .promise-link span {
+            font-size: 17px;
+            transition: transform .3s ease;
+        }
+
+        .promise-link:hover {
+            gap: 21px;
+            color: #7a8c62;
+        }
+
+        .promise-link:hover span {
+            transform: translateX(4px);
+        }
+
+
+        /* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+        .promise-visual.reveal {
+            opacity: 0;
+            transform: translateX(-45px);
+        }
+
+        .promise-content.reveal {
+            opacity: 0;
+            transform: translateX(45px);
+        }
+
+        .promise-visual.reveal.visible,
+        .promise-content.reveal.visible {
+            opacity: 1;
+            transform: translateX(0);
+
+            transition:
+                opacity .85s ease,
+                transform .85s cubic-bezier(.2, .7, .3, 1);
+        }
+
+        .promise-content.reveal.visible {
+            transition-delay: .15s;
+        }
+
+
+        /* =========================================
+   DARK MODE
+========================================= */
+
+        html[data-theme="dark"] .promise-section {
+            background: #111c15;
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .promise-image-frame {
+            background: #26372b;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, .30),
+                0 0 30px rgba(126, 156, 105, .07);
+        }
+
+        html[data-theme="dark"] .promise-content .eyebrow {
+            color: #a9bd8d;
+        }
+
+        html[data-theme="dark"] .promise-content h2 {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .promise-content h2 em {
+            color: #b6c99c;
+        }
+
+        html[data-theme="dark"] .promise-description {
+            color: #b6bcae;
+        }
+
+        html[data-theme="dark"] .promise-link {
+            color: #e4e8d9;
+            border-bottom-color: #93a77a;
+        }
+
+        html[data-theme="dark"] .promise-link:hover {
+            color: #b6c99c;
+        }
+
+        html[data-theme="dark"] .promise-badge {
+            background: #b6c78e;
+            color: #1c2a1e;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, .3),
+                0 0 20px rgba(182, 199, 142, .12);
+        }
+
+
+        /* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+        @media (max-width: 900px) {
+
+            .promise-section {
+                padding: 80px 6%;
+            }
+
+            .promise-container {
+                gap: 40px;
+            }
+
+            .promise-content h2 {
+                font-size: 53px;
+            }
+
+            .promise-badge {
+                width: 85px;
+                height: 85px;
+                right: -15px;
+            }
+        }
+
+
+        /* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+        @media (max-width: 650px) {
+
+            .promise-section {
+                padding: 65px 22px 75px;
+            }
+
+            .promise-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .promise-visual {
+                width: 90%;
+                max-width: 420px;
+            }
+
+            .promise-image-frame img {
+                aspect-ratio: 4 / 5;
+            }
+
+            .promise-badge {
+                width: 82px;
+                height: 82px;
+                right: -15px;
+                bottom: -16px;
+                font-size: 9px;
+            }
+
+            .promise-content {
+                max-width: 100%;
+            }
+
+            .promise-content h2 {
+                font-size: 49px;
+                letter-spacing: -1px;
+            }
+
+            .promise-description {
+                font-size: 13px;
+                line-height: 1.9;
+            }
+
+            .promise-visual.reveal {
+                transform: translateY(35px);
+            }
+
+            .promise-content.reveal {
+                transform: translateY(35px);
+            }
+
+            .promise-visual.reveal.visible,
+            .promise-content.reveal.visible {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* SMALL PHONES */
+
+        @media (max-width: 380px) {
+
+            .promise-content h2 {
+                font-size: 42px;
+            }
+
+            .promise-visual {
+                width: 88%;
+            }
+
+            .promise-section {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+        }
+
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .promise-badge {
+                animation: none;
+            }
+
+            .promise-visual,
+            .promise-content,
+            .promise-image-frame img,
+            .promise-link {
+                transition: none !important;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /* =========================================
+   ARKAAGO FUTURE PRODUCT CARD
+========================================= */
+
+        .future-product-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            align-self: start;
+
+            width: 100%;
+            min-height: 430px;
+            height: auto;
+            box-sizing: border-box;
+
+            padding: 38px 32px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            border-radius: 22px;
+
+            background:
+                radial-gradient(circle at 90% 10%,
+                    rgba(213, 179, 112, 0.24),
+                    transparent 45%),
+                linear-gradient(145deg, #f6eddf, #e9ddc8);
+
+            border: 1px solid rgba(151, 127, 91, 0.2);
+
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            box-shadow:
+                0 15px 40px rgba(63, 46, 25, 0.07),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+            animation: futureCardEnter 0.8s ease both;
+
+            transition:
+                background 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease,
+                transform 0.4s ease;
+        }
+
+
+        /* CARD GLOW EFFECT */
+
+        .future-product-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+
+            width: 200px;
+            height: 200px;
+
+            top: -90px;
+            right: -70px;
+
+            border-radius: 50%;
+
+            background: rgba(193, 165, 108, 0.24);
+            filter: blur(60px);
+
+            animation: futureGlow 7s ease-in-out infinite alternate;
+        }
+
+        .future-product-card::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+
+            width: 180px;
+            height: 180px;
+
+            bottom: -90px;
+            left: -80px;
+
+            border-radius: 50%;
+
+            background: rgba(125, 151, 101, 0.16);
+            filter: blur(60px);
+        }
+
+
+        /* CARD HOVER */
+
+        .future-product-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 25px 50px rgba(63, 46, 25, 0.13),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+
+        /* EYEBROW */
+
+        .future-product-card .eyebrow {
+            position: relative;
+            z-index: 1;
+
+            color: #94774e;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 1.7;
+
+            margin: 0 0 22px;
+        }
+
+
+        /* MAIN HEADING */
+
+        .future-product-card h3 {
+            position: relative;
+            z-index: 1;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(38px, 3.5vw, 54px);
+            font-weight: 600;
+            line-height: 0.98;
+            letter-spacing: -1px;
+
+            color: #321b14;
+
+            margin: 0 0 22px;
+        }
+
+        .future-product-card h3 em {
+            display: block;
+
+            margin-top: 5px;
+
+            font-style: italic;
+            font-weight: 500;
+
+            color: #788b62;
+        }
+
+
+        /* DESCRIPTION */
+
+        .future-product-card>p:not(.eyebrow) {
+            position: relative;
+            z-index: 1;
+
+            max-width: 330px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.9;
+
+            color: #806d58;
+
+            margin: 0;
+        }
+
+
+        /* BOTTOM STATUS */
+
+        .future-product-status {
+            position: relative;
+            z-index: 1;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+
+            margin-top: 28px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            line-height: 1.5;
+
+            color: #796947;
+        }
+
+
+        /* STATUS DOT */
+
+        .status-dot {
+            position: relative;
+
+            width: 8px;
+            height: 8px;
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: #879c67;
+
+            box-shadow: 0 0 0 4px rgba(135, 156, 103, 0.13);
+
+            animation: statusPulse 2s infinite ease-in-out;
+        }
+
+
+        /* =========================================
+   ANIMATIONS
+========================================= */
+
+        @keyframes futureCardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes futureGlow {
+            from {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            to {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        @keyframes statusPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 4px rgba(135, 156, 103, 0.13);
+            }
+
+            50% {
+                box-shadow: 0 0 0 9px rgba(135, 156, 103, 0.04);
+            }
+        }
+
+
+        /* =========================================
+   DARK MODE
+========================================= */
+
+        html[data-theme="dark"] .future-product-card {
+            background:
+                radial-gradient(circle at 90% 10%,
+                    rgba(143, 170, 110, 0.17),
+                    transparent 45%),
+                linear-gradient(145deg, #26392b, #17251c);
+
+            border-color: rgba(205, 222, 187, 0.12);
+
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        html[data-theme="dark"] .future-product-card:hover {
+            box-shadow:
+                0 25px 55px rgba(0, 0, 0, 0.3),
+                0 0 25px rgba(165, 190, 137, 0.08);
+        }
+
+        html[data-theme="dark"] .future-product-card::before {
+            background: rgba(145, 169, 112, 0.2);
+        }
+
+        html[data-theme="dark"] .future-product-card::after {
+            background: rgba(100, 143, 110, 0.14);
+        }
+
+        html[data-theme="dark"] .future-product-card .eyebrow {
+            color: #b7c99b;
+        }
+
+        html[data-theme="dark"] .future-product-card h3 {
+            color: #f0eee6;
+        }
+
+        html[data-theme="dark"] .future-product-card h3 em {
+            color: #b6c99c;
+        }
+
+        html[data-theme="dark"] .future-product-card>p:not(.eyebrow) {
+            color: #b6bcae;
+        }
+
+        html[data-theme="dark"] .future-product-status {
+            color: #c0cfaa;
+        }
+
+        html[data-theme="dark"] .status-dot {
+            background: #b6c99c;
+            box-shadow: 0 0 0 4px rgba(182, 201, 156, 0.13);
+        }
+
+
+        /* =========================================
+   TABLET
+========================================= */
+
+        @media (max-width: 900px) {
+
+            .future-product-card {
+                padding: 30px 25px;
+                min-height: 390px;
+            }
+
+            .future-product-card h3 {
+                font-size: 43px;
+            }
+
+        }
+
+
+        /* =========================================
+   MOBILE
+========================================= */
+
+        @media (max-width: 768px) {
+
+            .future-product-card {
+                width: 100%;
+                min-height: 320px;
+
+                padding: 30px;
+
+                border-radius: 19px;
+            }
+
+            .future-product-card h3 {
+                font-size: 46px;
+            }
+
+            .future-product-card>p:not(.eyebrow) {
+                font-size: 12px;
+            }
+
+        }
+
+        @media (max-width: 420px) {
+
+            .future-product-card {
+                min-height: 300px;
+                padding: 25px;
+            }
+
+            .future-product-card h3 {
+                font-size: 41px;
+            }
+
+            .future-product-status {
+                font-size: 8px;
+                letter-spacing: 0.8px;
+            }
+
+        }
+
+
+        /* =========================================
+   REDUCED MOTION
+========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .future-product-card,
+            .future-product-card::before,
+            .future-product-card::after,
+            .status-dot {
+                animation: none !important;
+                transition: none !important;
+            }
+
+        }
+
+        /* =================================
+   NAVBAR HAMBURGER - DARK MODE FIX
+================================= */
+
+        html[data-theme="dark"] .menu-button {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff;
+
+            opacity: 1 !important;
+            visibility: visible !important;
+
+            background: transparent;
+            border: none;
+
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* When hamburger changes into close icon */
+        html[data-theme="dark"] .menu-button:hover {
+            color: #b6c99c !important;
+            transform: scale(1.08);
+        }
+
+        /* Light mode */
+        html[data-theme="light"] .menu-button {
+            color: #26372b;
+        }
+
+        /* Smooth animation */
+        .menu-button {
+            transition: color .3s ease, transform .3s ease;
+        }
+
+        /* ADD TO BAG BUTTON INTERACTION */
+
+        .add-button {
+            transition: all .35s ease;
+        }
+
+        .add-button.is-added {
+            background: #e3eadb !important;
+            color: #263b2d !important;
+            border: 1px solid #c4d4b8;
+            box-shadow: 0 5px 15px rgba(67, 100, 60, .08);
+        }
+
+        .add-button.is-added:hover {
+            background: #d4e2c9 !important;
+            transform: translateY(-2px);
+        }
+
+        /* DARK MODE */
+
+        html[data-theme="dark"] .add-button.is-added {
+            background: #293d2d !important;
+            color: #c9dfb6 !important;
+            border-color: #526b50;
+        }
+
+        /* TOAST NOTIFICATION */
+
+        .bag-toast {
+            position: fixed;
+            z-index: 100000;
+            bottom: 30px;
+            left: 50%;
+
+            transform: translate(-50%, 20px);
+
+            padding: 14px 24px;
+            border-radius: 50px;
+
+            background: rgba(35, 53, 39, .94);
+            color: #f5f1e6;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .2);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: all .35s ease;
+            pointer-events: none;
+
+            max-width: calc(100% - 32px);
+            text-align: center;
+        }
+
+        .bag-toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0);
+        }
+
+        @media (max-width: 480px) {
+            .bag-toast {
+                bottom: 20px;
+                width: max-content;
+                max-width: calc(100% - 40px);
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <img src="assets/arkaago-logo.png" alt="Arkaago Logo">
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" onclick="closeMenu()">Home</a>
+            <a href="#collection" onclick="closeMenu()">Shop</a>
+            <a href="#about" onclick="closeMenu()">Our Story</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <!-- BAG NOW OPENS FULL CHECKOUT -->
+            <button class="bag-button" onclick="openBag()">
+                <span>Bag</span>
+                <span class="bag-count" id="bagCount">0</span>
+            </button>
+
+            <button class="menu-button" id="menuButton" onclick="toggleMenu()" aria-label="Toggle navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-left">
+
+                <div class="hero-image-circle">
+                    <img src="assets/pot.png" alt="Handcrafted decorative pot">
+                </div>
+
+                <span class="image-caption">CRAFTED WITH LOVE</span>
+
+            </div>
+
+            <div class="hero-right">
+
+                <p class="eyebrow">ART OF NATURAL LIVING</p>
+
+                <h1>
+                    A little piece of
+                    <span>nature</span>
+                    for your home.
+                </h1>
+
+                <p class="hero-description">
+                    Bring home the beauty of handcrafted designs.
+                    Discover timeless pots that make every corner
+                    feel special.
+                </p>
+
+                <div class="hero-price">
+                    <span>Starting from</span>
+                    <h2>₹1,900</h2>
+                </div>
+
+                <a href="#collection" class="primary-button">
+                    Explore Collection <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- COLLECTION -->
+        <section class="collection" id="collection">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">OUR PRODUCTS</p>
+                    <h2>Explore our Products</h2>
+                </div>
+
+                <p class="collection-note">
+                    Thoughtfully designed pieces for your space.
+                </p>
+
+            </div>
+
+
+            <div class="product-grid">
+
+
+
+                <!-- PRODUCT 1: THE ARKAAGO JAR -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <img src="assets/pot4.png" alt="The Arkaago Ghee Jar">
+                    </div>
+
+                    <div class="product-info">
+
+                        <div>
+                            <h3>The Arkaago Jar</h3>
+
+                            <p style="font-size: 9px; font-weight: 600;">
+                                GHEE - 1 LITER JAR
+                            </p>
+
+                            <p>Handcrafted collection</p>
+                        </div>
+
+                        <strong>₹1,900</strong>
+
+                    </div>
+
+                    <button class="add-button" data-product-id="4"
+                        onclick="addToBag(4, 'The Arkaago Jar', 1900, 'assets/pot4.png')">
+                        Add to Bag +
+                    </button>
+
+                </article>
+
+                <!-- PRODUCT soon -->
+
+                <article class="product-card ghee-product-card">
+
+                    <div class="product-image coming-soon-image">
+
+                        <img src="assets/Arkaago Natural Coming Soon Teaser.png" alt="Arkaago A2 Gir Cow Ghee 1000ml">
+
+                        <span class="coming-soon-badge">
+                            COMING SOON
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <div>
+                            <h3>A2 Gir Cow Ghee</h3>
+                            <p>1000ml Arkaago</p>
+                            <p>Handcrafted collection</p>
+                        </div>
+
+                        <strong class="coming-soon-label">
+                            Coming Soon
+                        </strong>
+
+                    </div>
+
+                    <button type="button" class="add-button coming-soon-button" disabled>
+                        Coming Soon
+                    </button>
+
+                </article>
+
+
+                <!-- FUTURE PRODUCTS CARD -->
+                <article class="future-product-card">
+
+
+                    <p class="eyebrow">SOMETHING NEW IS GROWING</p>
+
+                    <h3>
+                        More goodness
+                        <em>coming soon.</em>
+                    </h3>
+
+                    <p>
+                        We're preparing more thoughtful products
+                        for your everyday rituals.
+
+                        Stay connected with Arkaago for what's next.
+                    </p>
+
+                    <span class="future-product-status">
+                        <span class="status-dot"></span>
+                        NEW COLLECTION IN THE WORKS
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+
+            <p class="eyebrow">OUR PHILOSOPHY</p>
+
+            <h2>Made for homes that love nature.</h2>
+
+            <p>
+                We believe that beautiful spaces are created with
+                thoughtful details. Our collection brings together
+                natural inspiration, timeless design and craftsmanship.
+            </p>
+
+        </section>
+
+
+        <!-- ARKAAGO OUR PROMISE SECTION -->
+
+        <section class="promise-section" id="promise">
+
+            <div class="promise-container">
+
+                <!-- LEFT: PRODUCT VISUAL -->
+                <div class="promise-visual">
+
+                    <div class="promise-image-frame">
+
+                        <img src="assets/file_000000001e3c821189255ad72df90e31.png"
+                            alt="Arkaago natural A2 Gir Cow Ghee">
+
+                    </div>
+
+                    <div class="promise-badge">
+                        <span>PURE</span>
+                        <span>BY NATURE</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT: BRAND MESSAGE -->
+                <div class="promise-content">
+
+                    <p class="eyebrow">OUR PROMISE</p>
+
+                    <h2>
+                        A little more
+                        <em>goodness</em>
+                        in every day.
+                    </h2>
+
+                    <p class="promise-description">
+                        From the first slow churn to the last golden spoonful,
+                        Arkaago is made for Indian homes. We honour the
+                        traditional Bilona method, use pure ingredients,
+                        and keep our promise simple: honest ghee, made with care.
+                    </p>
+
+                    <a href="#about" class="promise-link">
+                        Discover our promise
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+        <footer id="contact">
+
+            <h2><img style="width: 250px;" src="/assets/arkaago-logo.png" alt=""></h2>
+
+            <p>Bringing natural beauty into everyday living.</p>
+
+            <div class="contact-details">
+
+                <p>
+                    Email:
+                    <a href="mailto:adikhari24@gmail.com">
+                        adikhari24@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    WhatsApp:
+                    <a href="https://wa.me/917217807009" target="_blank" rel="noopener">
+                        +91 7217807009
+                    </a>
+                </p>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Arkaago. All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- EXISTING BAG DRAWER
+         Kept in the HTML so your existing renderBag()
+         and cart functions can continue using these IDs.
+    -->
+    <div class="bag-overlay" id="bagOverlay" onclick="closeBag()"></div>
+
+    <aside class="bag-drawer" id="bagDrawer">
+
+        <div class="bag-header">
+            <h2>My Bag</h2>
+            <button onclick="closeBag()" class="close-button">✕</button>
+        </div>
+
+        <div id="bagItems" class="bag-items">
+            <p class="empty-bag">Your bag is empty.</p>
+        </div>
+
+        <div class="bag-footer">
+
+            <div class="total-row">
+                <span>Subtotal</span>
+                <strong id="bagTotal">₹0</strong>
+            </div>
+
+            <button class="checkout-button" onclick="openCheckout()">
+                Continue to Checkout ↗
+            </button>
+
+            <button class="continue-button" onclick="closeBag()">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- FULL-SCREEN CHECKOUT -->
+    <section class="arka-checkout" id="arkaCheckout" aria-hidden="true">
+
+        <!-- CHECKOUT HEADER -->
+        <header class="checkout-header">
+
+            <button class="checkout-back" type="button" onclick="closeCheckout()">
+                ← BACK TO SHOP
+            </button>
+
+            <a href="#home" class="checkout-logo" onclick="closeCheckout()">
+                <img src="assets/arkaago-logo.png" alt="Arkaago">
+            </a>
+
+            <span class="checkout-header-label">CHECKOUT</span>
+
+        </header>
+
+
+        <!-- CHECKOUT CONTENT -->
+        <main class="checkout-layout">
+
+            <!-- LEFT: ORDER SUMMARY -->
+            <section class="checkout-order">
+
+                <p class="checkout-eyebrow">YOUR ORDER</p>
+
+                <h1>Almost yours.</h1>
+
+                <div id="checkoutItems" class="checkout-items">
+                    <!-- Products are added using JavaScript -->
+                </div>
+
+                <div class="checkout-total">
+                    <span>Total</span>
+                    <strong id="checkoutTotal">₹0</strong>
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT: DELIVERY FORM -->
+            <form class="checkout-form" id="checkoutForm" onsubmit="checkoutWhatsApp(event)">
+
+                <p class="checkout-eyebrow">DELIVERY DETAILS</p>
+
+                <input type="text" id="checkoutName" placeholder="Full name" autocomplete="name" required>
+
+                <input type="email" id="checkoutEmail" placeholder="Email address (optional)" autocomplete="email">
+
+                <input type="tel" id="checkoutPhone" placeholder="Phone number" autocomplete="tel" required>
+
+                <input type="text" id="checkoutAddress" placeholder="Delivery address" autocomplete="street-address"
+                    required>
+
+                <textarea id="checkoutNotes" placeholder="Delivery notes (optional)"></textarea>
+
+                <button type="submit" class="checkout-submit" id="checkoutSubmitButton">
+                    Checkout on WhatsApp · ₹0
+                </button>
+
+                <p class="checkout-hint">
+                    REVIEW AND SEND THE MESSAGE IN WHATSAPP
+                </p>
+
+            </form>
+
+        </main>
+
+    </section>
+
+
+    <script>
+
+        /* =========================================
+           ARKAAGO SHOPPING CART
+        ========================================= */
+
+        // Load saved cart
+        let cart = [];
+
+        try {
+            cart = JSON.parse(localStorage.getItem("arkaagoCart")) || [];
+
+            if (!Array.isArray(cart)) {
+                cart = [];
+            }
+        } catch (error) {
+            cart = [];
+        }
+
+
+        // Save cart
+        function saveCart() {
+            localStorage.setItem("arkaagoCart", JSON.stringify(cart));
+        }
+
+
+        // Format price
+        function formatPrice(amount) {
+            return "₹" + Number(amount || 0).toLocaleString("en-IN");
+        }
+
+
+        // Update bag count
+        function updateBagCount() {
+
+            const count = cart.reduce(
+                (total, item) => total + Number(item.quantity || 0),
+                0
+            );
+
+            const bagCount = document.getElementById("bagCount");
+
+            if (bagCount) {
+                bagCount.textContent = count;
+            }
+        }
+
+
+        let bagToastTimer;
+
+        function showBagToast(productName, quantity) {
+
+            let toast = document.getElementById("bagToast");
+
+            if (!toast) {
+
+                toast = document.createElement("div");
+
+                toast.id = "bagToast";
+                toast.className = "bag-toast";
+
+                toast.setAttribute("role", "status");
+                toast.setAttribute("aria-live", "polite");
+
+                document.body.appendChild(toast);
+            }
+
+            toast.textContent =
+                `✓ ${productName} added to your bag · Qty ${quantity}`;
+
+            toast.classList.add("show");
+
+            clearTimeout(bagToastTimer);
+
+            bagToastTimer = setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2200);
+        }
+
+
+
+        /* =========================================
+           ADD PRODUCTS TO BAG
+        ========================================= */
+
+
+        function addToBag(id, name, price, image) {
+
+            let existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    id,
+                    name,
+                    price,
+                    image,
+                    quantity: 1
+                });
+                existingItem = cart[cart.length - 1];
+            }
+
+            saveCart();
+            updateBagCount();
+            renderBag();
+            renderCheckout();
+
+            updateAddButtonStates();
+
+            showBagToast(name, existingItem.quantity);
+        }
+
+
+        function updateAddButtonStates() {
+
+            document.querySelectorAll(
+                ".add-button[data-product-id]"
+            ).forEach(button => {
+
+                const id = button.dataset.productId;
+
+                const item = cart.find(
+                    product => String(product.id) === id
+                );
+
+                if (item) {
+
+                    button.textContent =
+                        item.quantity === 1
+                            ? "✓ Added to Bag"
+                            : `✓ Added to Bag ×${item.quantity}`;
+
+                    button.classList.add("is-added");
+
+                } else {
+
+                    button.textContent = "Add to Bag +";
+
+                    button.classList.remove("is-added");
+                }
+
+            });
+        }
+
+
+
+        /* =========================================
+           RENDER OLD BAG CONTENT
+           Kept for compatibility with your HTML.
+        ========================================= */
+
+        function renderBag() {
+
+            const bagItems = document.getElementById("bagItems");
+            const bagTotal = document.getElementById("bagTotal");
+
+            if (!bagItems || !bagTotal) return;
+
+            if (cart.length === 0) {
+
+                bagItems.innerHTML =
+                    '<p class="empty-bag">Your bag is empty.</p>';
+
+                bagTotal.textContent = "₹0";
+
+                return;
+            }
+
+            let total = 0;
+
+            bagItems.innerHTML = cart.map(item => {
+
+                const itemTotal = item.price * item.quantity;
+
+                total += itemTotal;
+
+                return `
+            <div class="bag-item">
+
+                <img src="${item.image}" alt="${item.name}">
+
+                <div class="bag-item-details">
+
+                    <h3>${item.name}</h3>
+
+                    <p>${formatPrice(item.price)}</p>
+
+                    <div class="quantity-controls">
+
+                        <button onclick="changeQuantity(${item.id}, -1)">
+                            −
+                        </button>
+
+                        <span>${item.quantity}</span>
+
+                        <button onclick="changeQuantity(${item.id}, 1)">
+                            +
+                        </button>
+
+                        <button
+                            class="remove-button"
+                            onclick="removeItem(${item.id})">
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+
+            }).join("");
+
+            bagTotal.textContent = formatPrice(total);
+        }
+
+
+        /* =========================================
+           CHANGE PRODUCT QUANTITY
+        ========================================= */
+
+        function changeQuantity(id, change) {
+
+            const item = cart.find(item => item.id === id);
+
+            if (!item) return;
+
+            item.quantity += change;
+
+            if (item.quantity <= 0) {
+                cart = cart.filter(item => item.id !== id);
+            }
+
+            saveCart();
+            updateBagCount();
+            renderBag();
+            renderCheckout();
+
+            // Update Add to Bag button quantity
+            updateAddButtonStates();
+        }
+        /* =========================================
+           REMOVE PRODUCT
+        ========================================= */
+        function removeItem(id) {
+
+            cart = cart.filter(item => item.id !== id);
+
+            saveCart();
+            updateBagCount();
+            renderBag();
+            renderCheckout();
+
+            // Refresh product buttons
+            updateAddButtonStates();
+        }
+
+        /* =========================================
+           OPEN BAG / CHECKOUT
+        ========================================= */
+
+        // Navbar Bag button opens full-screen checkout
+        function openBag() {
+            openCheckout();
+        }
+
+
+        // Open checkout screen
+        function openCheckout() {
+
+            if (cart.length === 0) {
+
+                alert("Your shopping bag is empty!");
+
+                return;
+            }
+
+            renderCheckout();
+
+            const checkout = document.getElementById("arkaCheckout");
+
+            if (!checkout) return;
+
+            checkout.classList.add("is-open");
+
+            checkout.setAttribute("aria-hidden", "false");
+
+            document.body.classList.add("checkout-open");
+        }
+
+
+        // Close checkout and return to shop
+        function closeCheckout() {
+
+            const checkout = document.getElementById("arkaCheckout");
+
+            if (!checkout) return;
+
+            checkout.classList.remove("is-open");
+
+            checkout.setAttribute("aria-hidden", "true");
+
+            document.body.classList.remove("checkout-open");
+        }
+
+
+        /* =========================================
+           CLOSE OLD BAG DRAWER
+        ========================================= */
+
+        function closeBag() {
+
+            const drawer = document.getElementById("bagDrawer");
+            const overlay = document.getElementById("bagOverlay");
+
+            if (drawer) {
+                drawer.classList.remove("active");
+            }
+
+            if (overlay) {
+                overlay.classList.remove("active");
+            }
+        }
+
+
+        /* =========================================
+           RENDER FULL-SCREEN CHECKOUT
+        ========================================= */
+
+        function renderCheckout() {
+
+            const container = document.getElementById("checkoutItems");
+
+            const totalElement = document.getElementById("checkoutTotal");
+
+            const checkoutButton =
+                document.getElementById("checkoutSubmitButton");
+
+            if (!container || !totalElement || !checkoutButton) return;
+
+            container.innerHTML = "";
+
+            let total = 0;
+
+            // Empty cart
+            if (cart.length === 0) {
+
+                container.innerHTML =
+                    '<p class="empty-bag">Your bag is empty. Continue shopping to add products.</p>';
+
+                totalElement.textContent = "₹0";
+
+                checkoutButton.textContent = "Your Bag Is Empty";
+
+                checkoutButton.disabled = true;
+
+                updateBagCount();
+
+                return;
+            }
+
+            checkoutButton.disabled = false;
+
+            // Render each product
+            cart.forEach((item, index) => {
+
+                const price = Number(item.price) || 0;
+
+                const quantity = Number(item.quantity) || 1;
+
+                const itemTotal = price * quantity;
+
+                total += itemTotal;
+
+
+                // Product container
+                const product = document.createElement("div");
+
+                product.className = "checkout-product";
+
+
+                // Product image
+                const image = document.createElement("img");
+
+                image.src = item.image;
+
+                image.alt = item.name;
+
+                image.className = "checkout-product-image";
+
+                image.onerror = function () {
+                    this.style.display = "none";
+                };
+
+                product.appendChild(image);
+
+
+                // Product information
+                const info = document.createElement("div");
+
+                info.className = "checkout-product-info";
+
+
+                const name = document.createElement("h3");
+
+                name.textContent = item.name;
+
+
+                const unitPrice = document.createElement("p");
+
+                unitPrice.textContent =
+                    formatPrice(price) + " per item";
+
+
+                // Quantity controls
+                const controls = document.createElement("div");
+
+                controls.className = "checkout-product-controls";
+
+
+                const minus = document.createElement("button");
+
+                minus.type = "button";
+
+                minus.className = "checkout-qty-button";
+
+                minus.textContent = "−";
+
+                minus.setAttribute("aria-label", "Decrease quantity");
+
+
+                const quantityText = document.createElement("span");
+
+                quantityText.className = "checkout-qty-number";
+
+                quantityText.textContent = quantity;
+
+
+                const plus = document.createElement("button");
+
+                plus.type = "button";
+
+                plus.className = "checkout-qty-button";
+
+                plus.textContent = "+";
+
+                plus.setAttribute("aria-label", "Increase quantity");
+
+
+                const remove = document.createElement("button");
+
+                remove.type = "button";
+
+                remove.className = "checkout-remove";
+
+                remove.textContent = "♜";
+
+                remove.title = "Remove product";
+
+                remove.setAttribute("aria-label", "Remove product");
+
+
+                // Quantity button actions
+                minus.addEventListener("click", () => {
+
+                    changeQuantity(item.id, -1);
+
+                });
+
+                plus.addEventListener("click", () => {
+
+                    changeQuantity(item.id, 1);
+
+                });
+
+                remove.addEventListener("click", () => {
+
+                    removeItem(item.id);
+
+                });
+
+
+                controls.append(
+                    minus,
+                    quantityText,
+                    plus,
+                    remove
+                );
+
+
+                info.append(
+                    name,
+                    unitPrice,
+                    controls
+                );
+
+                product.appendChild(info);
+
+
+                // Product subtotal
+                const itemPrice = document.createElement("div");
+
+                itemPrice.className = "checkout-product-price";
+
+                itemPrice.textContent = formatPrice(itemTotal);
+
+                product.appendChild(itemPrice);
+
+
+                container.appendChild(product);
+
+            });
+
+
+            // Update order total
+            totalElement.textContent = formatPrice(total);
+
+
+            // Update WhatsApp button
+            checkoutButton.textContent =
+                "Checkout on WhatsApp · " + formatPrice(total);
+
+
+            updateBagCount();
+        }
+
+
+        /* =========================================
+           WHATSAPP ORDER CHECKOUT
+        ========================================= */
+
+        function checkoutWhatsApp(event) {
+
+            event.preventDefault();
+
+
+            if (cart.length === 0) {
+
+                alert("Your shopping bag is empty!");
+
+                return;
+            }
+
+
+            // Get customer details
+            const name = document
+                .getElementById("checkoutName")
+                .value.trim();
+
+            const phone = document
+                .getElementById("checkoutPhone")
+                .value.trim();
+
+            const email = document
+                .getElementById("checkoutEmail")
+                .value.trim();
+
+            const address = document
+                .getElementById("checkoutAddress")
+                .value.trim();
+
+            const notes = document
+                .getElementById("checkoutNotes")
+                .value.trim();
+
+
+            // Validate required details
+            if (!name || !phone || !address) {
+
+                alert(
+                    "Please enter your name, phone number and delivery address."
+                );
+
+                return;
+            }
+
+
+            // Calculate total and create message
+            let total = 0;
+
+            let message = `Hello ARKAAGO!
+
+I would like to place an order:
+
+`;
+
+            cart.forEach(item => {
+
+                const price = Number(item.price) || 0;
+
+                const quantity = Number(item.quantity) || 1;
+
+                const itemTotal = price * quantity;
+
+                total += itemTotal;
+
+                message += `Product: ${item.name}
+Quantity: ${quantity}
+Price: ₹${price.toLocaleString("en-IN")}
+
+`;
+
+            });
+
+
+            message += `Total Amount: ₹${total.toLocaleString("en-IN")}
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email || "Not provided"}
+Delivery address: ${address}`;
+
+
+            if (notes) {
+
+                message += `
+
+Delivery notes: ${notes}`;
+
+            }
+
+
+            message += `
+
+Please confirm my order.`;
+
+
+            // Arkaago WhatsApp number
+            const phoneNumber = "917217807009";
+
+
+            // Create WhatsApp link
+            const whatsappURL =
+                `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+
+            // Open WhatsApp
+            window.open(whatsappURL, "_blank");
+
+        }
+
+
+        /* =========================================
+           MOBILE NAVIGATION
+        ========================================= */
+
+        function toggleMenu() {
+
+            const navLinks = document.getElementById("navLinks");
+
+            const menuButton = document.getElementById("menuButton");
+
+            if (!navLinks || !menuButton) return;
+
+            navLinks.classList.toggle("open");
+
+            const isOpen = navLinks.classList.contains("open");
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+
+        }
+
+
+        function closeMenu() {
+
+            const navLinks = document.getElementById("navLinks");
+
+            const menuButton = document.getElementById("menuButton");
+
+            if (!navLinks || !menuButton) return;
+
+            navLinks.classList.remove("open");
+
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute("aria-expanded", "false");
+
+        }
+
+
+        window.addEventListener("resize", () => {
+
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+
+        });
+
+
+        /* =========================================
+           ARKAAGO SCROLL REVEAL ANIMATION
+        ========================================= */
+
+        const revealElements = document.querySelectorAll(
+            ".hero-left, .hero-right, .section-heading, .product-card, .future-product-card, .about, .promise-visual, .promise-content"
+        );
+        revealElements.forEach(element => {
+
+            element.classList.add("reveal");
+
+        });
+
+
+        if ("IntersectionObserver" in window) {
+
+            const revealObserver = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        revealObserver.unobserve(entry.target);
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.12
+            });
+
+
+            revealElements.forEach(element => {
+
+                revealObserver.observe(element);
+
+            });
+
+        } else {
+
+            revealElements.forEach(element => {
+                element.classList.add("visible");
+            });
+
+        }
+
+
+        /* =========================================
+           ARKAAGO THEME SWITCHER
+        ========================================= */
+
+        const themeToggle = document.getElementById("themeToggle");
+
+        const themeIcon = document.getElementById("themeIcon");
+
+
+        // Load saved theme
+        let savedTheme = localStorage.getItem("arkaagoTheme") || "dark";
+
+
+        function applyTheme(theme) {
+
+            document.documentElement.setAttribute("data-theme", theme);
+
+            if (themeIcon && themeToggle) {
+
+                if (theme === "dark") {
+
+                    themeIcon.textContent = "☾";
+
+                    themeToggle.setAttribute(
+                        "aria-label",
+                        "Switch to light mode"
+                    );
+
+                } else {
+
+                    themeIcon.textContent = "☀";
+
+                    themeToggle.setAttribute(
+                        "aria-label",
+                        "Switch to dark mode"
+                    );
+
+                }
+
+            }
+
+            localStorage.setItem("arkaagoTheme", theme);
+
+        }
+
+
+        // Toggle between light and dark
+        function toggleTheme() {
+
+            savedTheme =
+                document.documentElement.getAttribute("data-theme") === "dark"
+                    ? "light"
+                    : "dark";
+
+            applyTheme(savedTheme);
+
+        }
+
+
+        // Apply theme on page load
+        applyTheme(savedTheme);
+
+
+        /* =========================================
+           INITIAL PAGE SETUP
+        ========================================= */
+
+        updateBagCount();
+
+        renderBag();
+        updateAddButtonStates();
+
+
+    </script>
+
+    <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>
